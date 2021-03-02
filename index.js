@@ -23,21 +23,22 @@ app.get("/ajaxmessage", (req, res) => {
 });
 
 app.post("/ajaxmessage", (req, res) => {
+  addDetails(req);
   // lähetetään tiedot html:lle sivulle.
-  let username2 = req.body.username2;
-  let country2 = req.body.country2;
-  let message2 = req.body.message2;
+  let username = req.body.username;
+  let country = req.body.country;
+  let message = req.body.message;
   res.send(
     "Käyttäjänimi: " +
-      username2 +
+      username +
       "<br>" +
       " Kotoisin: " +
-      country2 +
+      country +
       "<br>" +
       " Viesti: " +
-      message2
+      message
   );
-  console.log(username2 + country2 + message2);
+  console.log(username + country + message);
 });
 
 app.get("/newmessage", (req, res) => {
@@ -62,13 +63,13 @@ function addDetails(req, res) {
   let year = date_ob.getFullYear();
 
   // current month
-  let month = date_ob.getMonth();
+  let month = date_ob.getMonth() + 1;
 
   // current hours
   let hours = date_ob.getHours();
 
   // current minutes
-  let minutes = date_ob.getMinutes();
+  let minutes = date_ob.getMinutes() + " GMT";
 
   date_ob =
     "Time " + day + "/" + month + "/" + year + " " + hours + ":" + minutes;
