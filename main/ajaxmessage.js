@@ -2,9 +2,9 @@ window.onload = (event) => {
   var nappi = document.getElementById("nappi");
 
   nappi.addEventListener("click", () => {
-    var nimi = document.getElementById("username2").value;
-    var maa = document.getElementById("country2").value;
-    var viesti = document.getElementById("message2").value;
+    var nimi = document.getElementById("username").value;
+    var maa = document.getElementById("country").value;
+    var viesti = document.getElementById("message").value;
     console.log(nimi, maa, viesti);
     if (nimi == "" || maa == "" || viesti == "") {
       alert("Text field is empty!");
@@ -23,8 +23,6 @@ window.onload = (event) => {
       "Content-type",
       "application/x-www-form-urlencoded"
     );
-    xmlhttp.send(
-      "username2=" + nimi + "&country2=" + maa + "&message2=" + viesti
-    );
+    xmlhttp.send("username=" + nimi + "&country=" + maa + "&message=" + viesti);
   });
 };
