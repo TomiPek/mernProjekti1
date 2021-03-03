@@ -1,4 +1,7 @@
 body {
+  background-image: url("images/viesti.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   align-items: center;
   text-align: center;
   font-family: Arial;
@@ -50,8 +53,9 @@ input[type="submit"]:hover {
 }
 
 .container {
+  background-image: url("images/metsä.jpg");
   border-radius: 5px;
-  background-color: #d1471d;
+  background-color: #05182b;
   padding: 20px;
 }
 
